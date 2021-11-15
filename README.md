@@ -1,26 +1,40 @@
 # To run the dapp:
 
 `cd app`
-Run this command once:`yarn install`
+
+`yarn install` (Run this command once)
+
 `yarn start`
 
 # To build smart contract after modification:
 
 In Root folder:
+
 Run this command once: `yarn install`
+
 Then after each update in smart contract (present in programs/myepicproject/lib.rs) run:
-`anchor build`
-Get the new program id:
-`solana address -k target/deploy/myepicproject-keypair.json`
-Update this new program id in
-1> Anchor.toml
-`myepicproject = "new program id"`
-2> lib.rs
-`declare_id!("new program id");`
-Build Again:
+
 `anchor build`
 
-Copy the content of idl file (target/idl/myepicproject.json) into app/src/idl.json file
+Get the new program id:
+
+`solana address -k target/deploy/myepicproject-keypair.json`
+
+Update this new program id in
+
+1> Anchor.toml
+
+`myepicproject = "new program id"`
+
+2> lib.rs
+
+`declare_id!("new program id");`
+
+Build Again:
+
+`anchor build`
+
+Copy the content of idl file (target/idl/myepicproject.json) to app/src/idl.json file
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
